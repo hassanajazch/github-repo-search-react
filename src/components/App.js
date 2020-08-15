@@ -1,23 +1,36 @@
 import React from 'react';
+import InputForm from './InputForm';
+
+// Material-UI
+import {makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-// import InputForm from './components/InputForm';
-import './App.css';
+
+const useStyles = makeStyles(() => ({
+    appContainer: {
+        backgroundColor: '#f1ebeb',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'start',
+        minHeight: '100vh',
+    },
+    heading: {
+        marginTop: 100,
+    }
+}));
+
 
 const App = () => {
-  return (
-    <div className="App">
-      <header className="App-container">
-          <Typography variant="h4" component="h1" gutterBottom>
-              Create React App v4-beta example
-          </Typography>
-          <Button variant="contained" color="primary">
-              Primary
-          </Button>
-          {/*<InputForm/>*/}
-      </header>
-    </div>
-  );
+    const classes = useStyles();
+
+    return (
+        <div className={classes.appContainer}>
+            <Typography className={classes.heading} color='primary' variant='h4' component='h1' gutterBottom>
+                  Search User Github Repos
+            </Typography>
+            <InputForm/>
+        </div>
+    );
 }
 
 export default App;

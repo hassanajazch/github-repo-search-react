@@ -13,22 +13,26 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles({
     tableContainer: {
         marginBottom: 20,
-        marginTop: 20    },
+        marginTop: 20,
+        marginLeft: 7,
+    },
     table: {
         minWidth: 650,
     },
     tableCell: {
         fontWeight: 600,
+    },
+    cellLink: {
+        textDecoration: 'none',
     }
 });
 
 /**
- *
+ * Repos table component
  * @param props
  * @returns {JSX.Element}
  * @constructor
  */
-
 export default function RepoTable(props) {
     const classes = useStyles();
     const repoDetails = props.reposDetails;
@@ -47,7 +51,7 @@ export default function RepoTable(props) {
                     {repoDetails.map((repo) => (
                         <TableRow key={repo.id}>
                             <TableCell component='th' scope='row'>
-                                {repo.name}
+                                <a className={classes.cellLink} href={repo.html_url} target="_blank">{repo.name}</a>
                             </TableCell>
                             <TableCell align='right'>{repo.stargazers_count}</TableCell>
                             <TableCell align='right'>{repo.forks_count}</TableCell>
