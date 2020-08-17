@@ -6,6 +6,7 @@
 * I have used React Hooks for building components.
 * Use component based approach. All components are inside src/components. And write Github API call as service inside src/services
 * Write unit test using JEST
+* I use Material-UI for UI development
 
 #### Running Step
 - Install node v12.18.0
